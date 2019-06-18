@@ -18,8 +18,8 @@ except ImportError:
   flags = None
 
 SCOPES = 'https://www.googleapis.com/auth/drive'
-CLIENT_SECRET_FILE = 'client_id.json'
-APPLICATION_NAME = 'pythonX'
+CLIENT_SECRET_FILE = 'your Json file name'
+APPLICATION_NAME = 'your googleAPI name'
 
 def get_credentials():
     
