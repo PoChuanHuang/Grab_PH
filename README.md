@@ -41,7 +41,7 @@ clsid='{9BA05972-F6A8-11CF-A442-00A0C90A8F39}'##Internet Explorer的clsid
 windows = win32com.client.Dispatch(clsid)
 ```
 
-此為主程式，透過while True不斷偵測開啟的網站，若偵測到是porn.com，則偵測是否點擊影片，若有則對該影片連結利用爬蟲爬取影片的標題，將之存入send_msg，並將browser導回porn主頁面。
+此為主程式，透過while True不斷偵測開啟的網站，若偵測到是pornhub網站，則偵測是否點擊影片，若有則對該影片連結利用爬蟲爬取影片的標題，將之存入send_msg，並將browser導回porn主頁面。
 
 ```gherkin
 # 主執行緒繼續執行自己的工作
@@ -84,8 +84,7 @@ if __name__=='__main__':
         time.sleep(5)##每偵測一次瀏覽器就休息個5秒吧，不用那麼辛苦
 ```
 
-此為透過gmail寄信的function，首先要設定寄件者的帳號密碼，由於個資問題
-，所以將密碼覆蓋住，接著要將整封信件，包含寄件者、收件者、標題、內容放在一個string裡，透過smtp的函式將之寄出，其中需要注意的是，寄件者的帳號必須去google帳號頁面將低安全性應用程式存取權開啟，才得以讓python去發送寄信。
+此為透過gmail寄信的function，首先要設定寄件者的帳號密碼，由於個資問題，所以將密碼覆蓋住，接著要將整封信件，包含寄件者、收件者、標題、內容放在一個string裡，透過smtp的函式將之寄出，其中需要注意的是，寄件者的帳號必須去google帳號頁面將低安全性應用程式存取權開啟，才得以讓python去發送寄信。
 
 ```gherkin
 import smtplib
@@ -118,8 +117,7 @@ def send_gmail(gmail_name,send_msg):
         print ('Email sent failed!!!')
 ```
 
-此為鍵盤側錄之主要程式碼，判斷視窗名是否含有”gmail”字串來達到區隔其
-他網頁的效用，接著判斷是否有鍵盤輸入再來進行滑鼠事件偵測。
+此為鍵盤側錄之主要程式碼，判斷視窗名是否含有”gmail”字串來達到區隔其他網頁的效用，接著判斷是否有鍵盤輸入再來進行滑鼠事件偵測。
 
 ```gherkin
 def KeyStroke(event):  
@@ -168,8 +166,7 @@ def Mouse():
 
 ```
 
-此為螢幕截圖主要程式碼，利用pil函式庫進行區塊螢幕截圖，並給予緩衝
-時間0.5秒來儲存圖片，儲存為圖片後交給googleOCR進行影像辨識。
+此為螢幕截圖主要程式碼，利用pil函式庫進行區塊螢幕截圖，並給予緩衝時間0.5秒來儲存圖片，儲存為圖片後交給googleOCR進行影像辨識。
 
 ```gherkin
 def screenshot():
