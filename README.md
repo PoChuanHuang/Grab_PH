@@ -90,8 +90,8 @@ if __name__=='__main__':
 import smtplib
 
 def send_gmail(gmail_name,send_msg):
-    from_user = 'peter02589@gmail.com'
-    from_password = 'peter110246'
+    from_user = ''//輸入寄件者電子郵件帳號
+    from_password = ''//輸入寄件者電子郵件密碼
     
     subject = 'Hello'
     
